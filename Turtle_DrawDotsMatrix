@@ -1,0 +1,21 @@
+import turtle 
+
+matrix = turtle.Turtle()
+
+dot_distance = 25
+col = 5
+row = 5
+
+matrix.penup()
+
+for y in range(row):
+    for i in range(col):
+        matrix.dot()
+        matrix.forward(dot_distance)
+    matrix.backward(dot_distance * col)
+    matrix.right(90)
+    matrix.forward(dot_distance)
+    matrix.left(90)
+   
+    
+turtle.done()
