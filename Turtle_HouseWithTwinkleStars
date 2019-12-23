@@ -1,0 +1,153 @@
+import turtle
+import math
+from random import randint
+
+#create a background screen
+screen=turtle.Screen()
+screen.bgcolor("black")
+
+
+#create turtle pen
+artist=turtle.Turtle()
+artist.color("black")
+artist.shape("pen")
+artist.speed(10)
+
+
+
+# Define a funtion to draw and fill a rectangle with the given
+# dimensions and color
+
+def drawRectangle(t,width,height,color):
+  t.fillcolor(color)
+  t.begin_fill()
+  for i in range(2):
+    t.forward(width)
+    t.left(90)
+    t.forward(height)
+    t.left(90)
+  t.end_fill()
+
+# Define a funtion to draw and fill a square with the given
+# dimensions and color
+
+def drawsquare(t,width,color):
+  t.fillcolor(color)
+  t.begin_fill()
+  for i in range(4):
+    t.forward(width)
+    t.left(90)
+  t.end_fill()
+
+
+def drawtriangle(t,width,color):
+  t.fillcolor(color)
+  eachside=360/3
+  t.begin_fill()
+  for i in range(3):
+      t.forward(width)
+      t.left(eachside)
+  t.end_fill()
+
+
+def drawgrill(t,dist):
+  t.forward(dist/2)
+  t.left(90)
+  t.forward(dist)
+  t.left(90)
+  t.forward(dist/2)
+  t.left(90)
+  t.forward(dist/2)
+  t.left(90)
+  t.forward(dist)
+
+  # Draw star
+def drawstar(t):
+    t.fillcolor("yellow")
+    t.begin_fill()
+    for i in range(5):
+        t.forward(20)
+        t.right(144)
+    t.end_fill()
+
+
+# Draw and fill the floor
+artist.penup() 
+artist.goto(-200 ,-170)
+artist.pendown()
+drawRectangle(artist, 400, 20, "lightgreen")
+
+# Draw and fill the front of the house
+artist.penup() 
+artist.goto(-100 ,-150)
+artist.pendown()
+drawRectangle(artist, 150, 100, "blue")
+
+
+
+# Draw door
+artist.penup() 
+artist.goto(-35 ,-150)
+artist.pendown()
+drawRectangle(artist, 20, 50, "brown")
+
+# Draw left window
+artist.penup()
+artist.goto(-90,-100)
+artist.pendown()
+drawsquare(artist,25,"brown")
+drawgrill(artist,25)
+
+# Draw right window
+artist.penup()
+artist.goto(15,-100)
+artist.pendown()
+drawsquare(artist,25,"brown")
+drawgrill(artist,25)
+
+# Draw roof
+artist.penup()
+artist.goto(-100,-50)
+artist.pendown()
+drawtriangle(artist,150,"yellow")
+
+# Draw tree1
+artist.penup()
+artist.goto(100,-150)
+artist.pendown()
+drawRectangle(artist,20,75,"brown")
+
+
+
+artist.penup()
+artist.goto(90,-75)
+artist.pendown()
+drawtriangle(artist,40,"green")
+
+# Draw tree2
+artist.penup()
+artist.goto(140,-150)
+artist.pendown()
+drawRectangle(artist,20,75,"brown")
+
+
+artist.penup()
+artist.goto(130,-75)
+artist.pendown()
+drawtriangle(artist,40,"green")
+
+
+
+# Draw stars
+num_stars=0
+while num_stars<30:
+  x=randint(-300,300)
+  y=randint(100,250)
+  artist.penup()
+  artist.goto(x,y)
+  artist.pendown()
+  drawstar(artist)
+  num_stars=num_stars+1
+
+
+
