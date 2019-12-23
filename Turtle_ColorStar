@@ -1,0 +1,12 @@
+import turtle 
+
+colorstar = turtle.Turtle()
+
+colorstar.pencolor("red")
+
+for i in range(5):
+    colorstar.forward(50)
+    colorstar.left(144) 
+    
+    
+turtle.done()
