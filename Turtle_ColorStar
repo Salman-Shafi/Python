@@ -7,6 +7,6 @@ colorstar.pencolor("red")
 for i in range(5):
     colorstar.forward(50)
     colorstar.left(144) 
-    
+    colorstar.right(144) 
     
 turtle.done()
